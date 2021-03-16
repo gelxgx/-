@@ -1,0 +1,37 @@
+<!--弹窗-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <!-- <view class="modal-title">添加数量</view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <input placeholder-class="input-holder" type="number" maxlength="10" bindinput="inputChange" class="input" placeholder="请输入数量"></input>
+    </view>
+  </view> -->
+  <view class="modal-content">
+    <view class="modal-content-wrapper">
+      <image mode="aspectFill" src="{{modalInfo.items[0]}}"></image>
+      <text class="title">{{modalInfo['cn'].title}}</text>
+    </view>
+  </view>
+  <block wx:if="{{type === 1}}">
+    <view class="modal-footer">
+      <view class="btn-cancel" bindtap="onHandleDetail" data-id="{{modalInfo.id}}">
+        <image src="/images/modal-icon-2.png"></image>
+        <text>看一看</text>
+      </view>
+      <view class="btn-confirm" bindtap="goHere" data-id="{{markerId}}">
+        <image src="/images/modal-icon-1.png"></image>
+        <text>逛一逛</text>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="modal-footer">
+      <!-- <view class="btn-cancel" bindtap="onHandleDetail" data-id="{{modalInfo.id}}">查看详情</view> -->
+      <view class="single-btn" bindtap="goHere" data-id="{{markerId}}">
+        <image class="arrow-icon" src="/images/arrow_btn.png"></image>
+        <text>到这里去</text>
+      </view>
+    </view>
+  </block>
+</view>

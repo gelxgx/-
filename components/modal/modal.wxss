@@ -1,0 +1,132 @@
+.show-btn {
+  margin-top: 100rpx;
+  color: #22cc22;
+}
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255,255,255,.5);
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog {
+  width: 538rpx;
+  height:384rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  background: #D5D3D3;
+  transform:translate(-50%,-50%);
+  border-radius: 36rpx;
+}
+
+.modal-title {
+  padding-top: 50rpx;
+  font-size: 36rpx;
+  color: #030303;
+  text-align: center;
+}
+
+.modal-content {
+  padding: 27rpx 27rpx 0 27rpx;
+  width:100%;
+  height:300rpx;
+  box-sizing: border-box;
+}
+.modal-content-wrapper{
+  position: relative;
+  height:100%;
+  box-sizing: border-box;
+}
+.modal-content image{
+  width:100%;
+  height:100%;
+}
+.modal-content .title{
+  font-size:28rpx;
+  color:#fff;
+  position:absolute;
+  width:100%;
+  bottom:0;
+  left:0;
+  height:45rpx;
+  line-height:45rpx;
+  background: rgba(0,0,0,.7);
+  padding:0 10rpx;
+  box-sizing: border-box;
+}
+
+.modal-input {
+  display: flex;
+  background: #fff;
+  border: 2rpx solid #ddd;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+}
+
+
+.input {
+  width: 100%;
+  height: 82rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  color: #333;
+}
+
+input-holder {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  height: 86rpx;
+  border-top: 1px solid #dedede;
+  font-size: 34rpx;
+  line-height: 86rpx;
+}
+.btn-cancel image{
+  width:41rpx;
+  height:27rpx;
+  margin-right:5rpx;
+}
+.btn-confirm image{
+  width:39rpx;
+  height:33rpx;
+  margin-right:5rpx;
+}
+.btn-cancel {
+  width: 50%;
+  color: #666;
+  text-align: center;
+  border-right: 1px solid #dedede;
+}
+
+.btn-confirm {
+  width: 50%;
+  color: #666;
+  text-align: center;
+}
+.single-btn{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.arrow-icon{
+   width:35rpx;
+   height:46rpx;
+   margin-right:24rpx;
+}

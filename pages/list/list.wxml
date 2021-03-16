@@ -1,0 +1,22 @@
+<view class="markers-list-page">
+    <scroll-view class="list" scroll-y>
+        <block wx:for="{{list}}" wx:key="*this" >
+            <view class="item" data-id="{{item.id}}" bindtap="handleDetail">
+                <view class="item-image">
+                    <image mode="aspectFill" src="{{item.items[0]}}"></image>
+                </view>
+                <view class="item-block">
+                    <view class="item-title">
+                        <view class="item-title-text">{{item[currentLang].title}}</view>
+                        <image mode="heightFix" src="{{item.title_bg}}"></image>
+                    </view>
+                    <view class="item-back">
+                        <image src="/images/back.png"></image>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </scroll-view>
+    <language bind:handleLanguageSelect="handleLanguageSelect" hiddenOption="hk"></language>
+    <van-toast id="van-toast" />
+</view>

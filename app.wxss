@@ -1,0 +1,15 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background-color: #fff;
+  font-family: "PingFang SC", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Microsoft Yahei";
+}
+.image-shadow{
+    -webkit-filter: drop-shadow(5px 5px 5px #707070); /* Chrome, Safari, Opera */
+    filter:drop-shadow(5px 5px 5px #707070);
+    border-radius:5%;
+}
