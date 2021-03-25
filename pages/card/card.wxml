@@ -1,0 +1,26 @@
+<!--pages/card/card.wxml-->
+<view class="card-page">
+    <canvas class="canvas" style="width:675px;height:889px;"  canvas-id="mycanvas" />
+    <view class="card-page-content">
+        <image class="card-content-img" src="{{cardBgUrl}}"></image>
+        <view class="card-content-wrapper">
+            <view class="title">
+            <image src="{{cardTitle}}"></image>
+            </view>
+            <view class="card-detail">
+                <image src="{{detail.cardimg}}"></image>
+            </view>
+            <view class="card-text">
+                <text class="tip">{{locationText}}</text>
+                <text class="date">{{dateString}}</text>
+            </view>
+            <view class="logo">
+                <image src="{{cardLogo}}"></image>
+            </view>
+        </view>
+    </view>
+    <view class="card-page-btn" bindtap="saveCard">
+        <text>保存纪念卡</text>
+        <image src="/images/card-btn-bg.png"></image>
+    </view>
+</view>

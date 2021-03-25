@@ -1,0 +1,89 @@
+/* pages/card/card.wxss */
+.card-page{
+   width:100%;
+   height:100vh;
+   background: url('//yitian.happyhao.top/assets/card_bg.png') no-repeat;
+   background-size: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+.card-page-content{
+  height:889rpx;
+  width:675rpx;
+  position: relative;
+}
+.card-content-wrapper{
+  position: relative;
+  z-index:30;
+}
+.card-page-btn{
+   width:367rpx;
+   height:127rpx;
+   margin-top:56rpx;
+   position:relative;
+}
+.card-page-btn text{
+  position: absolute;
+  left:50%;
+  transform: translate(-50%,0%);
+  margin-top: 30rpx;
+  font-size:30rpx;
+  color:#847973;
+}
+.card-page-btn image{
+  width: 100%;
+  height: 100%;
+}
+.card-content-img{
+  position: absolute;
+  width:100%;
+  height:100%;
+}
+.title{
+  display: flex;
+  justify-content: center;
+  padding:134rpx 0 32rpx 0;
+}
+.title image{
+  width:536rpx;
+  height:42rpx;
+}
+.card-detail{
+  display:flex;
+  justify-content: center;
+}
+.card-detail image{
+  width:582rpx;
+  height:428rpx;
+}
+.card-text{
+  display: flex;
+  flex-direction: column;
+  padding:58rpx 120rpx 0rpx 120rpx;
+  font-size:24rpx;
+  color:#847973;
+  align-items: flex-end;
+  box-sizing: border-box;
+}
+.card-text .tip{
+  margin-right:39rpx;
+}
+.card-text .date{
+  margin-top:13rpx;
+}
+.logo{
+  display:flex;
+  justify-content:center;
+  margin-top:28rpx;
+}
+.logo image{
+  width:306rpx;
+  height:37rpx;
+}
+.canvas {
+  position: absolute;
+  top: -9999rpx;
+  left: 0;
+}

@@ -62,3 +62,11 @@
     height:443rpx;
     z-index:10;
 }
+.card-btn{
+    position: fixed;
+    right:14rpx;
+    bottom:195rpx;
+    z-index:50;
+    width:75rpx;
+    height:100rpx;
+}

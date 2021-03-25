@@ -51,5 +51,12 @@ Page({
         wx.setNavigationBarTitle({
             title: detail[currentLang].title || ''
         })
-    }
+    },
+    handleCreateCard(event){
+        console.log(event);
+        const {id} = event.currentTarget.dataset;
+        wx.navigateTo({
+          url: `/pages/card/card?id=${id}`,
+        })
+    },
 })

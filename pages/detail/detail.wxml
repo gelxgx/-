@@ -28,4 +28,5 @@
     </view>
     <banner-block is="banner"></banner-block>
     <language bind:handleLanguageSelect="handleLanguageSelect"></language>
+    <image src="/images/card-btn.png" class="card-btn" data-id="{{detail.id}}" bindtap="handleCreateCard"></image>
 </view>

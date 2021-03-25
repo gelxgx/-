@@ -62,7 +62,6 @@ Page({
   onLoad(options) {
     this.mapCtx = wx.createMapContext('mapId');
     const {id} = options;
-    console.log(id)
     if(id){
       this.getNewMarkers(()=>{this.autoOpenModal(id),this.getType()});
     }
@@ -94,11 +93,9 @@ Page({
         this.shop_markers = this.copyArr([..._shopMarkers,...type_markers])
         let all = [...this.data.showMarkers,...this.shop_markers]
         this.all_markers=this.copyArr([...all,...all_markers])
-        console.log(all)
         this.setData({
           markers:all
         })
-        console.log(this.data.markers)
       }
     })
   },
@@ -209,13 +206,11 @@ Page({
     const {locationTypeList,activeTypeList} = this.data;
     if(activeTypeList.includes(type)){
       const index = activeTypeList.findIndex(t=>t===type);
-      console.log('index',index);
       activeTypeList.splice(index,1);
     }
     else{
       activeTypeList.push(type);
     }
-    console.log('activeTypeList',activeTypeList);
     const markers = this.copyArr(all_markers);
     const _markers = markers.filter(item => activeTypeList.includes(item.type)) || [];
     this.setData({
@@ -364,7 +359,6 @@ Page({
     console.log(event)
     const {markerId} = event.detail;
     const {markers} = this.data;
-    console.log(markers)
     const modalInfo =  markers.find(item=>item.id === markerId) || {};
     const {id,type} = modalInfo;
     this.setData({
@@ -373,7 +367,6 @@ Page({
       markerId:id,
       type
     })
-    console.log('MODAL',modalInfo)
   },
   moveToLocation(){
     const { userLongitude, userLatitude } = this.data;
