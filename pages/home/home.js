@@ -38,8 +38,6 @@ Page({
     longitude: 110.492977,
     subkey:MapKey,
     markers:[],
-    shopMarkers:[],
-    showMarkers:[],
     showModal:false,
     isShowSearch:false,
     modalInfo:{},
@@ -67,97 +65,80 @@ Page({
     }
     else{
       this.getNewMarkers(()=>{this.getType()});
+      // this.getNewMarkers()
     }
     this.getMarkersType();
   },
-  getType(){
-    const {type_markers,all_markers} = this
+  getType(callBack){
+    const {type_markers} = this
     wx.request({
       url: 'https://yitian.zooseefun.net/detailid/classfindbyid',
       success:res=>{
         const _shopMarkers = res.data.map((item,index)=>{
-          return {
-            ...item,
-            id:index+9,
-            items:[item.icon],
-            width:20,
-            height:20,
-            label:{
-              content:item.name,
-              color:'#4d4d4d',
-              fontSize:10,
-              anchorX: -(0.5 * item.name.length * 10)
-            } 
+          if(item.type !==1){
+            return {
+              ...item,
+              id:index+9,
+              items:[item.icon],
+              width:20,
+              height:20,
+              label:{
+                content:item.name,
+                color:'#4d4d4d',
+                fontSize:10,
+                anchorX: -(0.5 * item.name.length * 10)
+              },
+              callout:{
+                borderColor:"transparent",
+                padding:0,
+                bgColor:"transparent"
+              }
+            }
           }
         })
-        this.shop_markers = this.copyArr([..._shopMarkers,...type_markers])
-        let all = [...this.data.showMarkers,...this.shop_markers]
-        this.all_markers=this.copyArr([...all,...all_markers])
-        this.setData({
-          markers:all
-        })
+        this.type_markers = this.copyArr([..._shopMarkers,...type_markers])
+        // let all = [...this.data.showMarkers,...this.type_markers]
+        // this.all_markers=this.copyArr([...all,...all_markers])
+        // this.setData({
+        //   markers:this.type_markers
+        // })
+        this.allMarkers()
+        callBack && callBack();
       }
     })
   },
-  // getMarkers(callBack){
-  //   const {default_markers} = this;
-  //   api.getMarkers((data)=>{
-  //     const _markers = data.map(item=>{
-  //       if(item.type === 1){
-  //         return {
-  //           ...item,
-  //           width:40,
-  //           height:40,
-  //           callout:{
-  //             ...callout,
-  //             content:item.cn.title 
-  //           }
-  //         }
-  //       }
-  //       else{
-  //         return{
-  //           ...item,
-  //           width:20,
-  //           height:20,
-  //           label:{
-  //             content:item.cn.title,
-  //             color:'#4d4d4d',
-  //             // textAlign:'center',
-  //             fontSize:10,
-  //             anchorX: -(0.5 * item.cn.title.length * 10)
-  //           } 
-  //         }
-  //       }
-  //   })
-  //     // this.default_markers = this.copyArr([..._markers,...default_markers]);
-  //     // this.setData({
-  //     //   markers: this.default_markers
-  //     // })
-  //     callBack && callBack();
-  //   })
-  // },
   getNewMarkers(callBack){
     const {default_markers} = this
     wx.request({
       url: 'https://yitian.zooseefun.net/detail/index',
       success:res=>{
         const _markers = res.data.map(item=>{
-          return {
-            ...item,
-            width:40,
-            height:40,
-            callout:{
-              ...callout,
-              content:item.cn.title 
+          if(item.type===1){
+            return {
+              ...item,
+              width:40,
+              height:40,
+              callout:{
+                ...callout,
+                content:item.cn.title 
+              }
             }
           }
         })
         this.default_markers = this.copyArr([..._markers,...default_markers])
-        this.setData({
-          showMarkers:this.default_markers
-        })
+        // this.setData({
+        //   showMarkers:this.default_markers
+        // })
         callBack && callBack();
       }
+    })
+  },
+  allMarkers(){
+    const {default_markers,type_markers} = this
+    let all = [...default_markers,...type_markers]
+    this.all_markers=this.copyArr([...all,...this.all_markers])
+    this.setData({
+      markers:this.all_markers
     })
   },
   toggleSearch(){
@@ -191,13 +172,6 @@ Page({
         })
       }
     })
-    // api.getMarkersType((locationTypeList)=>{
-    //   // console.log('list',list);
-    //   // 过滤掉景区
-    //   this.setData({
-    //     locationTypeList:locationTypeList.filter(item=>item.id !== 1)
-    //   })
-    // })
   },
 
   handleTypeList(event){
@@ -356,17 +330,18 @@ Page({
       })
   },
   onMarkerTap(event){
-    console.log(event)
     const {markerId} = event.detail;
-    const {markers} = this.data;
-    const modalInfo =  markers.find(item=>item.id === markerId) || {};
-    const {id,type} = modalInfo;
-    this.setData({
-      showModal:true,
-      modalInfo,
-      markerId:id,
-      type
-    })
+    const {all_markers} = this;
+    // const {markers} = this.data;
+      const modalInfo =  all_markers.find(item=>item.id === markerId) || {};
+      const {id,type} = modalInfo;
+      console.log(modalInfo)
+      this.setData({
+        showModal:true,
+        modalInfo,
+        markerId:id,
+        type
+      })
   },
   moveToLocation(){
     const { userLongitude, userLatitude } = this.data;
