@@ -34,9 +34,9 @@ Page({
   /**   * 页面的初始数据   */
   data: {
     type:1,
-    latitude: 24.774812,
-    longitude: 110.492977,
-    subkey:MapKey,
+    latitude: 31.57566,
+    longitude: 120.3047,
+    // subkey:MapKey,
     markers:[],
     showModal:false,
     isShowSearch:false,
