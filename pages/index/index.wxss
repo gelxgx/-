@@ -1,20 +1,22 @@
 /* pages/index/index.wxss */
 .index-page{
   height:100vh;
-  background: url('//yitian.happyhao.top/assets/index-bg.png') no-repeat;
+  /* background: url('//yitian.happyhao.top/assets/index-bg.png') no-repeat; */
   background-size:100% 100%;
+  display:flex;
+   align-items:center;
+   justify-content: center;
 }
-.index-image-wrapper{
-  height:600rpx;
-  overflow:hidden;
+.index-bg {
+  height: 100vh;
+  width: 100vw;
 }
-.index-image-wrapper swiper{
-  height:100%;
-}
-.index-image-wrapper image{
-  display:block;
-  width:100%;
-  height:100%;
+.index-logo {
+  width: 104rpx;
+  height: 228rpx;
+  position: absolute;
+  top: 90rpx;
+  left: 20rpx;
 }
 .index-button-group{
    height:calc(100vh - 600rpx);
@@ -23,11 +25,12 @@
    flex-direction: column;
    padding-top:150rpx;
    box-sizing:border-box;
+   position: absolute;
+   top: 572rpx;
 }
 .index-button-group .btn{
    width:350rpx;
    height:95rpx;
-   background:rgba(188, 184, 179, .6);
    border-radius:10rpx;
    display:flex;
    justify-content:center;
@@ -39,13 +42,13 @@
 }
 
 .index-button-group .btn image.icon-1{
-   width:46rpx;
-   height:26rpx;
+  width: 248rpx;
+  height: 80rpx;
    margin-right:29rpx;
 }
 .index-button-group .btn image.icon-2{
-  width:30rpx;
-  height:40rpx;
+  width: 248rpx;
+  height: 80rpx;
   margin-right:29rpx;
 }
 .index-button-group .btn image.text-image{
