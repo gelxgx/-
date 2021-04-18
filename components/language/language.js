@@ -10,8 +10,12 @@ Component({
         icon:'/images/cn.png'
       },
       {
-        value: 'hk',
-        icon: '/images/hk.png'
+        value: 'japanese',
+        icon: '/images/jp.png'
+      },
+      {
+        value: 'kor',
+        icon: '/images/ko.png'
       },
       {
         value: 'en',

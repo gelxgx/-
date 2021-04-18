@@ -19,6 +19,7 @@ Page({
         url: 'https://yitian.zooseefun.net/detail/index',
         success:res=>{
           Toast.clear();
+          console.log(res.data)
           this.setData({
             list:res.data
           })
@@ -32,11 +33,11 @@ Page({
             url:`/pages/detail/detail?id=${id}`
         })
     },
-    handleLanguageSelect(event) {
-      console.log('eventList', event);
-      const { detail:currentLang } = event;
-      this.setData({
-        currentLang
-      })
-    },
+    // handleLanguageSelect(event) {
+    //   console.log('eventList', event);
+    //   const { detail:currentLang } = event;
+    //   this.setData({
+    //     currentLang
+    //   })
+    // },
 })

@@ -1,7 +1,14 @@
+
 .list{
     padding:44rpx 21rpx;
     box-sizing:border-box;
     height:100vh;
+    position: absolute;
+    top: 0;
+}
+.list-bg{
+    width: 100vw;
+    height: 100vh;
 }
 .item{
     margin-bottom:20rpx;
@@ -19,8 +26,11 @@
 }
 
 .markers-list-page{
-    background:url('//yitian.happyhao.top/assets/list-bg.jpg') no-repeat;
-    background-size:cover;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    /* background:url('//yitian.happyhao.top/assets/list-bg.jpg') no-repeat;
+    background-size:cover; */
 }
 .item-image image{
     width:100%;
@@ -47,7 +57,7 @@
     display:flex;
     align-items:center; 
     z-index:99; 
-  
+    font-family: 'simplified' !important;
 }
 .item-back{
     width:84rpx;

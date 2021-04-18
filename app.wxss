@@ -13,3 +13,7 @@
     filter:drop-shadow(5px 5px 5px #707070);
     border-radius:5%;
 }
+@font-face{
+  font-family: 'simplified';
+  src: url("https://img.zooseefun.net/yitian/simplified.TTF");
+}
