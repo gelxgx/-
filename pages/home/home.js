@@ -3,7 +3,7 @@ import Notify from '../../miniprogram_npm/vant-weapp/notify/notify';
 
 const QQMapWX = require('../../lib/qqmap-wx-jssdk');
 
-const MapKey = 'MPGBZ-RCT3D-AAQ4N-PBRKA-SVM7J-OBBBJ'
+const MapKey = 'IW3BZ-K3YWK-6E7JL-AL45D-6DESK-VOF73'
 
 const qqmapsdk = new QQMapWX({
   key: MapKey // 必填
@@ -36,7 +36,7 @@ Page({
     type:1,
     latitude: 31.57566,
     longitude: 120.3047,
-    // subkey:MapKey,
+    subkey:MapKey,
     markers:[],
     showModal:false,
     isShowSearch:false,

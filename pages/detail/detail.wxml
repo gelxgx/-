@@ -19,7 +19,8 @@
         </view>
         <view class="detail-info">
             <custom-video videoSource="{{detail[currentLang].sounds}}" bind:audioPlay="audioPlay"></custom-video>
-            <image class="detail-title" src="/images/detail-title.png"></image>
+            <view class="detail-title">{{detail[currentLang].intro}}</view>
+            <!-- <image class="detail-title" src="/images/detail-title.png"></image> -->
             <scroll-view scroll-y="{{true}}" class="detail-info-scroll">
                 <view class="detail-info-text">
                     <rich-text nodes="{{detail[currentLang].detail}}"></rich-text>

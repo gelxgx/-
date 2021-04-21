@@ -87,8 +87,11 @@
     height:100rpx;
 }
 .detail-title{
+    background-color: #D4D4D4;
+    line-height: 50rpx;
+    text-align: center;
     width: 216rpx;
-    height: 64rpx;
+    height: 50rpx;
     position: absolute;
     left: 0;
     right: 0;
