@@ -1,0 +1,41 @@
+<!--pages/indexDatil/index.wxml-->
+
+<view class="page">
+  <view class="detail">
+      <view class="detail-image">
+          <swiper class="detail-swiper"  
+          indicator-dots="{{indicatorDots}}"
+          autoplay="{{autoPlay}}"
+          >
+              <block wx:for="{{detail.items}}" wx:key="*this">
+                  <swiper-item>
+                      <image src="{{item}}" lazy-load="true">
+                      </image>
+                  </swiper-item>
+              </block>
+          </swiper>
+          <view class="title">
+              <text class="content">{{detail[currentLang].title}}</text>
+          </view>
+      </view>
+      <view class="detail-info">
+          <custom-video videoSource="{{detail[currentLang].sounds}}" bind:audioPlay="audioPlay"></custom-video>
+          <view class="detail-title">{{detail[currentLang].intro}}</view>
+          <!-- <image class="detail-title" src="/images/detail-title.png"></image> -->
+          <scroll-view scroll-y="{{true}}" class="detail-info-scroll">
+              <view class="detail-info-text">
+                  <rich-text nodes="{{detail[currentLang].detail}}"></rich-text>
+              </view>
+          </scroll-view>
+          <!-- <image class="detail-top-image" src="/images/cloud.png"></image>
+          <image class="detail-bottom-image" mode="aspectFill" src="{{detail.detail_bg}}"></image> -->
+          <view class="bottom-image">
+              <image class="logo" src="/images/index-logo.png"></image>
+              <image class="detail-bg" src="{{detail.detail_bg}}"></image>
+          </view>
+      </view>
+  </view>
+  <language bind:handleLanguageSelect="handleLanguageSelect"></language>
+  
+  <!-- <image src="/images/card-btn.png" class="card-btn" data-id="{{detail.id}}" bindtap="handleCreateCard"></image> -->
+</view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "banner-block":"/components/banner/banner",
+    "custom-video":"/components/customVideoIconSingle/customVideo",
+    "language":"/components/language/language"
+  }
+}

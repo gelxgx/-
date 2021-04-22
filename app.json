@@ -5,7 +5,8 @@
     "pages/home/home",
     "pages/detail/detail",
     "pages/search/search",
-    "pages/card/card"
+    "pages/card/card",
+    "pages/indexDetail/index"
   ],
   "permission": {
     "scope.userLocation": {

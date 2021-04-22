@@ -37,7 +37,16 @@ Page({
     latitude: 31.57566,
     longitude: 120.3047,
     subkey:MapKey,
-    markers:[],
+    markers:[
+      {
+        id:1,
+        width:20,
+        height:20,
+        icon:'../../images/wc.png',
+        latitude:31.57568,
+        longitude:120.304548
+      }
+  ],
     showModal:false,
     isShowSearch:false,
     modalInfo:{},
@@ -50,7 +59,14 @@ Page({
     route: [
       Object.assign({ points: [] }, polylineStyle)
     ],
-    locationTypeList:[],
+    locationTypeList:[],//接口数组
+    localTypeList:[
+      {icon:'../../images/play.png'},
+      {icon:'../../images/wc.png'},
+      {icon:'../../images/map.png'},
+      {icon:'../../images/market.png'},
+      {icon:'../../images/tea.png'},
+    ],//临时接口
     activeTypeList:[1]
   },
   default_markers:[],
@@ -59,15 +75,15 @@ Page({
 
   onLoad(options) {
     this.mapCtx = wx.createMapContext('mapId');
-    const {id} = options;
-    if(id){
-      this.getNewMarkers(()=>{this.autoOpenModal(id),this.getType()});
-    }
-    else{
-      this.getNewMarkers(()=>{this.getType()});
-      // this.getNewMarkers()
-    }
-    this.getMarkersType();
+    // const {id} = options;
+    // if(id){
+    //   this.getNewMarkers(()=>{this.autoOpenModal(id),this.getType()});
+    // }
+    // else{
+    //   this.getNewMarkers(()=>{this.getType()});
+    //   // this.getNewMarkers()
+    // }
+    // this.getMarkersType();
   },
   getType(callBack){
     const {type_markers} = this
@@ -394,6 +410,11 @@ Page({
   jumpSearch(){
     wx.navigateTo({
       url:`/pages/search/search`
+    })
+  },
+  goindexDetail(){
+    wx.navigateTo({
+      url:'/pages/indexDetail/index'
     })
   },
   onShow() {

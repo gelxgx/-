@@ -97,13 +97,13 @@ input-holder {
   line-height: 86rpx;
 }
 .btn-cancel image{
-  width:41rpx;
-  height:27rpx;
+  width:44rpx;
+  height:44rpx;
   margin-right:5rpx;
 }
 .btn-confirm image{
-  width:39rpx;
-  height:33rpx;
+  width:48rpx;
+  height:48rpx;
   margin-right:5rpx;
 }
 .btn-cancel {
@@ -111,12 +111,18 @@ input-holder {
   color: #666;
   text-align: center;
   border-right: 1px solid #dedede;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-confirm {
   width: 50%;
   color: #666;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .single-btn{
   width:100%;

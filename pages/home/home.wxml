@@ -13,13 +13,19 @@
   }
 </wxs>
 <view class="page">
-    <!-- <view class="search-box">
+    <view class="search-box">
         <image class="" src="../../images/search.png" bindtap="toggleSearch"></image>
-        <div class="search-input {{ isShowSearch ? 'show-search' : 'hide-search'}}" bindtap="jumpSearch" >
-          <input placeholder="请输入搜索的内容" />
+        <div class="search-input show-search" bindtap="jumpSearch" >
+          <input />
         </div>
-    </view> -->
-    <!-- <view class="go-index-page" bindtap="goBack">
+    </view>
+    <view class="go-detail-page" bindtap="goindexDetail">
+      <image
+        src="../../images/detail-icon.png"
+        lazy-load="false">
+      </image>
+  </view>
+    <view class="go-index-page" bindtap="goBack">
         <image
           src="../../images/home-icon.png"
           lazy-load="false">
@@ -30,18 +36,17 @@
           src="../../images/location_btn.png"
           lazy-load="false">
         </image>
-    </view> -->
-    <!-- <view class="marker-list-view">
-        <image src="../../images/image_top.png" class="image-shadow pos-img pos-img-top"></image>
-        <image src="../../images/image_top.png" class="image-shadow pos-img pos-img-bottom"></image>
-        <scroll-view scroll-y="true" class="marker-list-scroll"   scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-          <block wx:for="{{locationTypeList}}" wx:key="*this">
+    </view>
+    <view class="marker-list-view">
+      <image class="wc" src="../../images/wc.png"></image>
+        <!-- <scroll-view scroll-y="true" class="marker-list-scroll"   scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+          <block wx:for="{{localTypeList}}" wx:key="*this">
             <view class="scroll-view-item" data-type="{{item.id}}" catchtap="handleTypeList">
               <image class="{{helper.includes(activeTypeList,item.id) ? '' : 'filter'}}" src="{{item.icon}}"></image>
             </view>
           </block>
-        </scroll-view>
-    </view> -->
+        </scroll-view> -->
+    </view>
     <map
         id="mapId"
         class="map"

@@ -13,13 +13,6 @@
     "miniprogram": {
       "list": [
         {
-          "id": -1,
-          "name": "pages/home/home",
-          "pathName": "pages/notFound/notFound",
-          "query": "",
-          "scene": null
-        },
-        {
           "name": "pages/list/list",
           "pathName": "pages/list/list",
           "query": "",
@@ -40,6 +33,13 @@
         {
           "name": "pages/detail/detail",
           "pathName": "pages/detail/detail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/indexDetail/index",
+          "pathName": "pages/indexDetail/index",
+          "query": "",
           "scene": null
         }
       ]
