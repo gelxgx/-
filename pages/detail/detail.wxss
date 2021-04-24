@@ -43,8 +43,8 @@
     position: relative;
     top: 66rpx;
     z-index:50;
-    height:320rpx;
-    /* height: 35vh; */
+    /* height:320rpx; */
+    height: 35vh;
     width: 620rpx;
     left: 0;
     right: 0;
